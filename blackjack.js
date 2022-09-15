@@ -1,11 +1,13 @@
-let firstCard ;
-let secondCard ;
-let nextCard;
-let sum= 0;
-let message =""
+let firstCard
+let secondCard
+let nextCard
+let sum = 0
+let message = ""
+
 let message_el = document.getElementById("message-El")
 let card_el = document.getElementById("card-el")
 let sum_el = document.getElementById("sum-el")
+
 let cardarr = []
 
 let newCardBtn = document.querySelector('.newCard')
@@ -28,7 +30,7 @@ function startgame(){
     else if(sum==21){
         message ="Congrats You won!!"
         newCardBtn.style.visibility = 'hidden'
-      }
+    }
     else{
     message = " You lost"
     newCardBtn.style.visibility = 'hidden'
@@ -46,7 +48,6 @@ function newcard(){
       if(sum<21){
         message ="Would u like to draw a card?"
         newCardBtn.style.visibility = 'visible'
-
       }    
       else if(sum==21){
         message ="Congrats You won!!"

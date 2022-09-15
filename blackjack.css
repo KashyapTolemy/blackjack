@@ -24,9 +24,9 @@ h1{
     -webkit-text-stroke: 1px #192c35;
     
 }
-h1:hover{
+/* h1:hover{
     box-shadow: ;
-}
+} */
 #message{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
