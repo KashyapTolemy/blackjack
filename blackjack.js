@@ -13,7 +13,10 @@ let card_elp1 = document.getElementById("card-elp1")
 let sum_elp1 = document.getElementById("sum-elp1")
 let card_elp2 = document.getElementById("card-elp2")
 let sum_elp2 = document.getElementById("sum-elp2")
-
+card_elp1.textContent=""
+sum_elp1.textContent=""
+card_elp2.textContent=""
+sum_elp2.textContent=""
 let cardarrp1 = []
 let cardarrp2 = []
 
