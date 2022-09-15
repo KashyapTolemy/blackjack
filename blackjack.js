@@ -22,6 +22,7 @@ newCardBtn.style.visibility = 'hidden'
 let passBtn = document.querySelector('.pass')
 passBtn.style.visibility = 'hidden'
 
+
 function lost(){
   message = "You lost :( . Wanna try again?"
   newCardBtn.style.visibility = 'hidden'
@@ -33,86 +34,78 @@ function won(){
   passBtn.style.visibility = 'hidden'
 }
 function draw_pass(){
-  message ="Would u like to draw a card or pass?"
+  message = "Would u like to draw a card or pass?"
   newCardBtn.style.visibility = 'visible'
   passBtn.style.visibility = 'visible'
 }
 function startgame(){
-    firstCardp1 = Math.floor(Math.random()*12) + 2;
-    secondCardp1 = Math.floor(Math.random()*12) + 2;
-    firstCardp2 = Math.floor(Math.random()*12) + 2;
-    secondCardp2 = Math.floor(Math.random()*12) + 2;
-    
-    sump1 = firstCardp1+secondCardp1;
-    sump2 = firstCardp2+secondCardp2;
-    
-    cardarrp1 = []
-    cardarrp1.push(firstCardp1,secondCardp1)
-    cardarrp2 = []
-    cardarrp2.push(firstCardp2,secondCardp2)
-    
-    if(sump1<21){
-        draw_pass()
+  firstCardp1 = Math.floor(Math.random()*12) + 2;
+  secondCardp1 = Math.floor(Math.random()*12) + 2;
+  firstCardp2 = Math.floor(Math.random()*12) + 2;
+  secondCardp2 = Math.floor(Math.random()*12) + 2;
+  
+  sump1 = firstCardp1+secondCardp1;
+  sump2 = firstCardp2+secondCardp2;
+  
+  cardarrp1 = []
+  cardarrp1.push(firstCardp1,secondCardp1)
+  cardarrp2 = []
+  cardarrp2.push(firstCardp2,secondCardp2)
+  
+  if(sump1<21 && sump2<21 ) draw_pass()
+  else if(sump1==21) won()
+  else if(sump2==21) lost()
+  else if(sump2>21) won()
+  else if(sump1>21) lost()
 
-    }    
-    else if(sump1==21){
-        won()
-    }
-    else if(sump2==21){
-        lost()
-    }
-    else if(sump2>21){
-        won()
-    }
-    else if(sump1>21){
-        lost()
-    }
-      console.log(sump1)
-      message_el.innerText = message;
-      card_elp1.innerText = "Cards: "+ firstCardp1+" "+secondCardp1;
-      sum_elp1.innerText = "Sum: "+ sump1;
-      card_elp2.innerText = "Opponent Cards: "+ firstCardp2+" "+secondCardp2;
-      sum_elp2.innerText = "Sum: "+ sump2;
-    }
-
-
+  // console.log(sump1)
+  
+  message_el.innerText = message
+  card_elp1.innerText = "Cards: "+ firstCardp1 + " " + secondCardp1;
+  sum_elp1.innerText = "Sum: "+ sump1;
+  card_elp2.innerText = "Opponent Cards: "+ firstCardp2+" "+secondCardp2;
+  sum_elp2.innerText = "Sum: "+ sump2;
+}
 function newcard(){
-      nextCardp1 = Math.floor(Math.random()*10)+2;
-      sump1 = sump1+ nextCardp1;
-      cardarrp1.push(nextCardp1);
-      if(sump1<21){
-        draw_pass()
-      }    
-      else if(sump1==21){
-        won()
-      }
-      else{
-        lost()
-        
-      }
-      console.log(message)
-      message_el.innerText = message;
-      card_elp1.innerText = "Cards: ";
-      for(let i =0;i<cardarrp1.length;i++)
-      {
-        card_elp1.textContent += cardarrp1[i] +" "
+  nextCardp1 = Math.floor(Math.random()*11)+1;
+  nextCardp2 = Math.floor(Math.random()*11)+1;
+  sump1 += nextCardp1;
+  sump2 += nextCardp2;
+  cardarrp1.push(nextCardp1);
+  cardarrp2.push(nextCardp2);
+  
+  if(sump1 == 21 || (sump2 > 21 && sump1<21) ) won()
+  else if(sump1 > 21 || sump2 == 21) lost()
 
-      }
+  console.log(message)
+  message_el.innerText = message;
 
-      sum_elp1.innerText = "Sum: "+ sump1;
-
+  card_elp1.innerText = "Cards: ";
+  for(let i =0;i<cardarrp1.length;i++) {
+    card_elp1.textContent += cardarrp1[i] +" "
+  }
+  
+  card_elp2.innerText = "Opponent Cards: "
+  for(let i =0;i<cardarrp2.length;i++) {
+    card_elp2.textContent += cardarrp2[i] +" "
+  }
+  
+  sum_elp1.innerText = "Sum: "+ sump1;
+  sum_elp2.innerText = "Sum: "+ sump2;
 }
 function pass(){
-
   while(1) {
     if(sump2 > 21) {
       won()
+      message_el.innerText = message
       break
     }
     else if(sump2 == 21 || sump1 < sump2) {
-      won()
+      lost()
+      message_el.innerText = message
       break
     }
+
     nextCardp2 = Math.floor(Math.random() * 10 ) + 1
     cardarrp2.push(nextCardp2)
     card_elp2.innerText = "Opponent Cards: ";
@@ -121,7 +114,5 @@ function pass(){
     }
     sump2 += nextCardp2 
     sum_elp2.innerText = "Sum: "+ sump2;
-
   }
 }
-    
