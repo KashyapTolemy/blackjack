@@ -10,7 +10,8 @@
 
 
 body{
-    background-image: url("https://cdn.pixabay.com/photo/2016/03/17/23/09/poker-1264076_960_720.jpg");
+    /* background-image: url("https://cdn.pixabay.com/photo/2016/03/17/23/09/poker-1264076_960_720.jpg"); */
+    background-image: url(poker-1264076_1920.jpg);
     background-size: 100vw 100vh ;
     background-blend-mode: multiply;
     background-color: #315464;
