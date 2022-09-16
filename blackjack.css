@@ -1,5 +1,5 @@
 * {
-    
+   /* transition: all 1s;  */
 }
 body{
     background-color: #315464;
@@ -60,3 +60,4 @@ button:hover{
     box-shadow: none;
     color: white;
 }
+
