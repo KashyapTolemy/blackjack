@@ -27,6 +27,9 @@ let passBtn = document.querySelector('.pass')
 passBtn.style.visibility = 'hidden'
 
 
+  // alert("Hello there !! Let me explain you the Instructions \n Here at first each player (you and the opponent) gets two cards .Now you got the ability to either take a new card or pass it. Note that once you pass you cannot pick any card again. The one who gets a sum of 21 wins the game or if any of you score more than 21 you are out of it and the opponent wins.Incase both of you get a sum less than 21 then the one who has the higher sum wins");
+
+
 function lost(){
   message = "You lost :( . Wanna try again?"
   newCardBtn.style.visibility = 'hidden'

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 
+:root {
+    --secondary-color : #c6ac8f;
+    --title-text-color: rgb(73, 72, 72);
+}
 
 * {
    /* transition: all 1s;  */
@@ -16,18 +20,19 @@ body{
     background-blend-mode: multiply;
     background-color: #315464;
     /* border: 2px solid black; */
-    height: 96vh;
+    height: 98vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 h1{
-    color: rgb(73, 72, 72);
+    color: var(--title-text-color);
     text-align: center;
     font-size: 7ch;
-    background-color: #c6ac8f;
+    background-color: var(--secondary-color);
     margin: 0 auto;
     max-width: max-content;
     padding: 0 3rem;
@@ -74,4 +79,35 @@ button:hover{
     box-shadow: none;
     color: white;
 }
+.alert {
+    font-size: larger;
+    font-weight: bold;
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--secondary-color);
+    color: black;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: var(--title-text-color);
+    font-weight: bold;
+    float: right;
+    font-size: 3rem;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: red;
+  }  
+  #instruction{
+    background-color: #315464;
+    color: white;
+  }
 
